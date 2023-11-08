@@ -1,0 +1,27 @@
+.card {
+  background-color: rgba(198, 197, 198, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  width: 370px;
+  min-height: 360px;
+  border-radius: 15px;
+
+  &--icon {
+    width: 56px;
+    height: 56px;
+
+  }
+  &--title {
+    font-weight: 500;
+    font-size: 32px;
+  }
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}

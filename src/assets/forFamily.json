@@ -1,0 +1,42 @@
+[
+  {
+    "question": "Документи?",
+    "options": ["Так", "Ні"],
+    "correctAnswer": "Так"
+  },
+  {
+    "question": "Чи треба пакувати воду?",
+    "options": ["Так", "Ні"],
+    "correctAnswer": "Так"
+  },
+  {
+    "question": "Скільки літрів води рекомендується",
+    "options": ["1", "1,5", "3", "4"],
+    "correctAnswer": "4"
+  },
+  {
+    "question": "Медична картка?",
+    "options": ["Так", "Ні"],
+    "correctAnswer": "Так"
+  },
+  {
+    "question": "Ліки?",
+    "options": ["Так", "Ні"],
+    "correctAnswer": "Так"
+  },
+  {
+    "question": "Засоби для надання першої допомоги",
+    "options": ["Так", "Ні"],
+    "correctAnswer": "Так"
+  },
+  {
+    "question": "Одяг?",
+    "options": ["Так", "Ні"],
+    "correctAnswer": "Так"
+  },
+  {
+    "question": "Записка чи бейдж на дитину",
+    "options": ["Так", "Ні"],
+    "correctAnswer": "Так"
+  }
+]

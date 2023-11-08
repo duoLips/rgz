@@ -44,7 +44,7 @@ $banner-smallest: 320px;
         &::after {
           content: "";
           display: block;
-          background-image: url("./assets/bannerBP.png");
+          background-image: url("../assets/bannerBP.png");
           background-size: cover;
           width: 711px;
           height: 761px;
@@ -56,7 +56,7 @@ $banner-smallest: 320px;
         &::before {
           content: "";
           display: block;
-          background-image: url("./assets/bannerBGwave.svg");
+          background-image: url("../assets/bannerBGwave.svg");
           background-size: cover;
           width: 216px;
           height: 905px;
@@ -80,7 +80,7 @@ $banner-smallest: 320px;
         &::after {
           content: "";
           display: block;
-          background-image: url("./assets/bannerBGwave.svg");
+          background-image: url("../assets/bannerBGwave.svg");
           filter: brightness(0) invert(1);
 
           background-size: cover;
