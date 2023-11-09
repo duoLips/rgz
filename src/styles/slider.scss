@@ -1,3 +1,8 @@
+$banner-largest: 1760px;
+$banner-medium: 1160px;
+$banner-small: 768px;
+$banner-smallest: 320px;
+
 .slider--item {
   width: 250px;
   height: 400px;
@@ -100,26 +105,158 @@
   margin-top: 80px;
 
   &--text {
-  flex-basis: 29%;
+    flex-basis: 29%;
   }
+
   &--quiz {
     margin-left: 10px;
     flex-basis: 30%;
     display: flex;
     justify-content: center;
   }
+
   &--container {
     display: flex;
     flex-direction: column;
     align-items: center;
+
     .swiper-swiper {
       max-width: 500px;
     }
   }
 }
+
 .swiper-button-next, .swiper-button-prev {
   color: #CC494A;
 }
+
 .swiper-pagination-bullet-active {
   background-color: #CC494A;
+}
+
+@media (min-width: $banner-largest) {
+
+}
+
+@media (max-width: $banner-medium) {
+
+}
+
+@media (max-width: $banner-small) {
+  .slider {
+    flex-direction: column;
+
+    &--text {
+      text-align: center;
+    }
+  }
+  .slider--item {
+    width: 178px;
+    height: 290px;
+
+    &-img {
+      width: 100%;
+      height: auto;
+
+    }
+
+    &-title {
+      text-align: center;
+      top: 15%;
+      z-index: 1000;
+    }
+
+    &-time {
+      text-align: center;
+    }
+
+    &_forOne {
+      &::after {
+        width: 250px;
+        height: 256px;
+      }
+    }
+
+    &_forTwo {
+      &::after {
+        width: 285px;
+        height: 205px;
+      }
+    }
+
+    &_forFamily {
+      &::after {
+        width: 235px;
+        height: 225px;
+      }
+
+      &::before {
+        width: 81px;
+        height: 99px;
+      }
+    }
+  }
+  .slider {
+    &--container {
+      .swiper-swiper {
+        max-width: 340px;
+      }
+    }
+  }
+}
+
+@media (max-width: $banner-smallest) {
+  .slider--item {
+    width: 125px;
+    height: 200px;
+
+    &-img {
+      width: 100%;
+      height: auto;
+
+    }
+
+    &-title {
+      text-align: center;
+      top: 15%;
+      z-index: 1000;
+    }
+
+    &-time {
+      text-align: center;
+    }
+
+    &_forOne {
+      &::after {
+        width: 167px;
+        height: 171px;
+      }
+    }
+
+    &_forTwo {
+      &::after {
+        width: 210px;
+        height: 152px;
+      }
+    }
+
+    &_forFamily {
+      &::after {
+        width: 157px;
+        height: 150px;
+      }
+
+      &::before {
+        width: 54px;
+        height: 66px;
+      }
+    }
+  }
+  .slider {
+    &--container {
+      .swiper-swiper {
+        max-width: 250px;
+      }
+    }
+  }
 }

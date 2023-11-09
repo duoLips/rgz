@@ -17,9 +17,7 @@ $banner-smallest: 320px;
     position: absolute;
     top: 0;
     left: 65%;
-
   }
-
   &-text {
     &_container {
       padding: 0 10px;
@@ -30,8 +28,6 @@ $banner-smallest: 320px;
       display: flex;
       justify-content: space-between;
       padding-top: 250px;
-
-
     }
 
     &_elem {
@@ -62,7 +58,7 @@ $banner-smallest: 320px;
           height: 905px;
           top: -250px;
           position: absolute;
-          left: 90%;
+          left: 85%;
           z-index: -1;
         }
       }
@@ -87,7 +83,7 @@ $banner-smallest: 320px;
           width: 216px;
           height: 905px;
           top: calc(-250px - 1.31em);
-          left: -25%;
+          left: -23%;
           position: absolute;
 
           z-index: -1;

@@ -1,16 +1,20 @@
 .quiz {
+  div {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
   &--list {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
+
     flex-wrap: wrap;
     gap: 5px;
   }
-
-  &--list-items {
-  }
-
   &--list-items_btn {
     color: #222B39;
     background-color:#C6C5C6;

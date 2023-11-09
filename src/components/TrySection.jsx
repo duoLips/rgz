@@ -31,6 +31,11 @@ const TrySection = () => {
                 setTime(45)
                 setTimeUp(false)
                 break;
+            default:
+                setQuestionSet(forOne);
+                setTime(20)
+                setTimeUp(false)
+                break;
         }
         setCurrentQuestionIndex(0);
     }, [activeSlide])
@@ -38,7 +43,7 @@ const TrySection = () => {
 
     return (
         <div className="wrapper">
-            <section>
+            <section id="try">
                 <div className="section--title">
                     <h2 className="section--title-heading">СПРОБУЙ СКЛАСТИ ТРИВОЖНУ ВАЛІЗУ</h2>
                 </div>

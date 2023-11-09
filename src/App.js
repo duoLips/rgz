@@ -13,11 +13,6 @@ function App() {
             <Main />
             <TrySection />
             <Footer />
-
-            {/*<ChessBoard/>*/}
-            {/*<Lab7/>*/}
-            {/*<Lab7NEW/>*/}
-            {/*<Lab8/>*/}
         </div>
     )
 }

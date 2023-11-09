@@ -14,7 +14,7 @@ const Main = () => {
 
     return (
         <div className="wrapper">
-            <section>
+            <section id="about" >
                 <div className="section--title section--title_block">
                     <h2 className="section--title-heading accent">ТРИВОЖНА ВАЛІЗА</h2>
                     <span> - це підготований набір речей, необхідних у екстреній ситуації.</span>
@@ -31,13 +31,12 @@ const Main = () => {
                         <img src={bp1} alt="backpacks"/>
                     </div>
                 </div>
-
             </section>
             <section>
                 <div className="section--title">
                     <h2 className="section--title-heading accent">ЩО ТРЕБА КЛАСТИ ?</h2>
                 </div>
-                <div>
+                <div id="cards">
                     <div className="cards">
                         <Card icon={dockIcon} title="Документи"
                               text="паспорт, водійське посвідчення, військовий квиток, документи на право власності"/>
@@ -79,7 +78,7 @@ const Main = () => {
                             </p>
                         </div>
                     </div>
-                    <div>
+                    <div id="types" >
                         <p className="section--subheading">
                             Залежно від того на скількох людей Ви збираєте тривожну валізу вона буває трьох типів:
                         </p>

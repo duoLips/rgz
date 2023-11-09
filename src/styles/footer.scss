@@ -1,7 +1,13 @@
+$banner-largest: 1760px;
+$banner-medium: 1160px;
+$banner-small: 768px;
+$banner-smallest: 320px;
+
 footer {
   background-color: #C6C5C6;
   margin-top: 140px;
   position: relative;
+
   &::before {
     content: '';
     display: block;
@@ -44,6 +50,25 @@ footer {
         color: #222B39;
         text-decoration: none;
       }
+    }
+  }
+}
+@media (max-width: $banner-small) {
+  footer {
+    &::before {
+      top: -18%;
+    }
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: column;
+
+    &--list {
+      text-align: center;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
     }
   }
 }

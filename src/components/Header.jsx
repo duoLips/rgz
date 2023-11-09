@@ -16,12 +16,11 @@ const Header = () => {
                 <div className="bar"></div>
             </div>
             <div className="wrapper">
-
                 <ul className="nav-items">
-                    <li><a onClick={toggleNavbar} href="#">Головна</a></li>
-                    <li><a onClick={toggleNavbar} href="#">Про валізу</a></li>
-                    <li><a onClick={toggleNavbar} href="#">Склад</a></li>
-                    <li><a onClick={toggleNavbar} href="#">Типи валіз</a></li>
+                    <li><a onClick={toggleNavbar} href="#main">Головна</a></li>
+                    <li><a onClick={toggleNavbar} href="#about">Про валізу</a></li>
+                    <li><a onClick={toggleNavbar} href="#cards">Склад</a></li>
+                    <li><a onClick={toggleNavbar} href="#types">Типи валіз</a></li>
                 </ul>
             </div>
         </nav>
