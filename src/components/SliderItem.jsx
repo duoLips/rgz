@@ -1,15 +1,13 @@
 import React from "react";
 
-const SliderItem = ({ time, img, title }) => {
+const SliderItem = ({time, img, title, classN}) => {
 
     return (
-        <>
-            <div >
-                <img src={img} alt="slider img"/>
-                <span>{title}</span>
-                <span>{time} секунд</span>
-            </div>
-        </>
+        <div className={`slider--item slider--item_${classN}`} >
+            <img className="slider--item-img" src={img} alt="slider img"/>
+            <span className="slider--item-title" >{title}</span>
+            <span className="slider--item-time" >{time} секунд</span>
+        </div>
     );
 };
 

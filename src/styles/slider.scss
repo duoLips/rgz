@@ -1,0 +1,125 @@
+.slider--item {
+  width: 250px;
+  height: 400px;
+  position: relative;
+
+  &-img {
+    position: absolute;
+    top: 50%;
+    right: 0%;
+    transform: translate(50%, -50%);
+  }
+
+  &-title {
+    color: #CC494A;
+    font-size: 32px;
+    font-weight: 500;
+    position: absolute;
+    top: 3.5%;
+    right: 0%;
+    transform: translate(50%, -50%);
+  }
+
+  &-time {
+    color: white;
+    font-size: 36px;
+    font-weight: 700;
+    position: absolute;
+    top: 60%;
+    right: 0%;
+    transform: translate(50%, -50%);
+  }
+
+  &_forOne {
+    &::after {
+      content: "";
+      display: block;
+      width: 334px;
+      height: 342px;
+      background-size: cover;
+      background-image: url("../assets/oneTimerBlub.png");
+      position: absolute;
+      z-index: -1;
+      top: 50%;
+      right: 0%;
+      transform: translate(50%, -50%);
+    }
+  }
+
+  &_forTwo {
+    &::after {
+      content: "";
+      display: block;
+      width: 421.267px;
+      height: 305.756px;
+      background-size: cover;
+      background-image: url("../assets/twoTimerBlub.png");
+      position: absolute;
+      z-index: -1;
+      top: 50%;
+      right: 0%;
+      transform: translate(50%, -50%);
+    }
+  }
+
+  &_forFamily {
+    &::after {
+      content: "";
+      display: block;
+      width: 315.008px;
+      height: 299.918px;
+      background-size: cover;
+      background-image: url("../assets/familyTimerBlub.png");
+      position: absolute;
+      z-index: -1;
+      top: 50%;
+      right: 0%;
+      transform: translate(50%, -50%);
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      width: 107px;
+      height: 133px;
+      background-size: cover;
+      background-image: url("../assets/familyTimerBPxs.png");
+      position: absolute;
+      z-index: 1;
+      top: 25%;
+      right: -5%;
+      transform: translate(50%, -50%);
+    }
+  }
+}
+
+.slider {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 80px;
+
+  &--text {
+  flex-basis: 29%;
+  }
+  &--quiz {
+    margin-left: 10px;
+    flex-basis: 30%;
+    display: flex;
+    justify-content: center;
+  }
+  &--container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .swiper-swiper {
+      max-width: 500px;
+    }
+  }
+}
+.swiper-button-next, .swiper-button-prev {
+  color: #CC494A;
+}
+.swiper-pagination-bullet-active {
+  background-color: #CC494A;
+}

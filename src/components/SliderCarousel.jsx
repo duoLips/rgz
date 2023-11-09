@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import {Swiper, SwiperSlide} from 'swiper/react';
 import {Pagination, Navigation} from 'swiper/modules';
 import 'swiper/scss';
@@ -9,29 +9,16 @@ import oneTimer from "../assets/oneTimerBP.png";
 import twoTimer from "../assets/twoTimerBP.png";
 import familyTimer from "../assets/familyTimerBP.png";
 import SliderItem from "./SliderItem";
-import forOne from "../assets/forOneQ.json";
-import forTwo from "../assets/forTwoQ.json";
-import forFamily from "../assets/forFamily.json";
 
-const SliderCarousel = ({ activeSlide, setActiveSlide,setTime, time }) => {
-    useEffect(() => {
-        switch (activeSlide) {
-            case 0:
-                setTime(20)
-                break;
-            case 1:
-                setTime(30)
-                break;
-            case 2:
-                setTime(45)
-        }
-    }, [activeSlide])
+
+const SliderCarousel = ({setActiveSlide, time}) => {
+
     const pagination = {
         clickable: true,
     };
 
     return (
-        <>
+        <div className="swiper-swiper">
             <Swiper
                 onSlideChange={(swiper) => setActiveSlide(swiper.activeIndex)}
                 spaceBetween={20}
@@ -41,16 +28,16 @@ const SliderCarousel = ({ activeSlide, setActiveSlide,setTime, time }) => {
                 navigation={true}
             >
                 <SwiperSlide>
-                    <SliderItem time={time} img={oneTimer} title="НА ОДНОГО" />
+                    <SliderItem time={time} img={oneTimer} title="НА ОДНОГО" classN="forOne"/>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <SliderItem time={time} img={twoTimer} title="НА ДВОХ" />
+                    <SliderItem time={time} img={twoTimer} title="НА ДВОХ" classN="forTwo"/>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <SliderItem time={time} img={familyTimer} title="НА СІМ’Ю" />
+                    <SliderItem time={time} img={familyTimer} title="НА СІМ’Ю" classN="forFamily"/>
                 </SwiperSlide>
             </Swiper>
-        </>
+        </div>
     );
 };
 

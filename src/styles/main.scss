@@ -14,6 +14,7 @@
     height: 56px;
 
   }
+
   &--title {
     font-weight: 500;
     font-size: 32px;
@@ -24,4 +25,166 @@
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
+}
+
+section {
+
+  margin-top: 70px;
+}
+
+.section {
+
+  &--title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    &-heading {
+      font-size: 48px;
+      font-weight: 500;
+      margin: 0;
+    }
+
+    &_block {
+      span {
+        color: #222B39;
+        font-size: 32px;
+        font-weight: 400;
+      }
+    }
+  }
+
+  &--subheading {
+    font-size: 36px;
+    font-weight: 500;
+  }
+
+  &--span {
+    font-size: 24px;
+    font-weight: 400;
+  }
+
+  &--p {
+    font-size: 20px;
+    font-weight: 300;
+  }
+
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-block: 80px;
+
+  &--text {
+    flex-basis: 50%;
+
+    &_long {
+      flex-basis: 60%;
+    }
+  }
+
+  &--media {
+    flex-basis: 42%;
+    position: relative;
+    z-index: 100;
+
+    img {
+      width: 100%;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      height: 100%;
+      width: 65%;
+      background-image: url("../assets/1stSectionBlub.png");
+      background-size: cover;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: -1;
+    }
+
+    &_smaller {
+      width: 362px;
+      height: 362px;
+      position: relative;
+
+      img {
+        width: 100%;
+      }
+
+      &::after {
+        content: "";
+        display: block;
+        height: 90%;
+        width: 90%;
+        background-image: url("../assets/2ndSectionBlub.png");
+        background-size: cover;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: -1;
+      }
+    }
+  }
+}
+
+.list {
+  margin-left: 100px;
+
+  &--container {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 200px;
+    align-items: flex-start;
+  }
+
+  &--title {
+    font-size: 32px;
+    font-weight: 500;
+  }
+
+  &--list {
+    list-style: none;
+    flex-basis: 35%;
+
+    &:last-of-type {
+
+      flex-basis: 60%;
+    }
+  }
+
+  &--item {
+    font-size: 24px;
+    font-weight: 300;
+    margin-bottom: 24px;
+  }
+}
+
+.rules {
+  display: flex;
+  align-items: flex-start;
+  align-content: flex-start;
+  flex-wrap: wrap;
+
+  &--container {
+    display: flex;
+    flex: 0 0 50%;
+    align-items: center;
+    gap: 70px;
+    flex-shrink: 0;
+
+  }
+
+  &--number {
+    color: #C6C5C6;
+    font-size: 128px;
+    font-weight: 700;
+  }
 }

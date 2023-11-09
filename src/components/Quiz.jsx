@@ -1,26 +1,10 @@
-import React, {Component, useEffect, useState} from 'react';
-import forOne from '../assets/forOneQ.json';
-import forTwo from '../assets/forTwoQ.json';
-import forFamily from '../assets/forFamily.json';
+import React, {useEffect, useState} from 'react';
+import '../styles/quiz.scss'
 
-const Quiz = ({activeSlide, time, setTime}) => {
-    const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+const Quiz = ({activeSlide, time, setTime, setCurrentQuestionIndex, currentQuestionIndex, questionSet, setTimeUp, timeUp}) => {
     const [selectedOption, setSelectedOption] = useState('');
     const [score, setScore] = useState(0);
-    const [questionSet, setQuestionSet] = useState(forOne);
 
-    useEffect(() => {
-        switch (activeSlide) {
-            case 0:
-                setQuestionSet(forOne);
-                break;
-            case 1:
-                setQuestionSet(forTwo);
-                break;
-            case 2:
-                setQuestionSet(forFamily);
-        }
-    }, [activeSlide])
 
     useEffect(() => {
         if (currentQuestionIndex < questionSet.length) {
@@ -29,7 +13,7 @@ const Quiz = ({activeSlide, time, setTime}) => {
                     setTime((prevTime) => prevTime - 1);
                 } else {
                     clearInterval(timerInterval);
-                    alert('Time is up!');
+                    setTimeUp(true);
                 }
             }, 1000);
 
@@ -38,46 +22,68 @@ const Quiz = ({activeSlide, time, setTime}) => {
             };
         }
     }, [time, currentQuestionIndex, questionSet]);
-
-
     const handleOptionSelect = (option) => {
         const currentQuestion = questionSet[currentQuestionIndex];
         if (option === currentQuestion.correctAnswer) {
             setScore((prevScore) => prevScore + 1);
         }
-
         setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
         setSelectedOption('');
     };
 
+    const handleRestart = () => {
+        setTimeUp(false)
+        setCurrentQuestionIndex(0);
+        setSelectedOption('');
+        setScore(0);
+        switch (activeSlide) {
+            case 0:
+                setTime(20)
+                break;
+            case 1:
+                setTime(30)
+                break;
+            case 2:
+                setTime(45)
+                break;
+        }
+    };
     const currentQuestion = questionSet[currentQuestionIndex];
 
     return (
-        <div>
-            {currentQuestionIndex < questionSet.length ? (
+        <div className="quiz">
+            {currentQuestionIndex < questionSet.length && timeUp === false ? (
                 <div>
-                    <p>Time left: {time} seconds</p>
-                    <p>Питання {currentQuestionIndex + 1}</p>
-                    <p>{currentQuestion.question}</p>
-                    <ul>
+                    <span className=" section--span accent">{currentQuestion.question}</span>
+                    <ul className="quiz--list">
                         {currentQuestion.options.map((option, index) => (
-                            <li key={index}>
+                            <li className="quiz--list-items" key={index}>
                                 <button
                                     onClick={() => handleOptionSelect(option)}
                                     disabled={selectedOption !== ''}
+                                    className="quiz--list-items_btn"
                                 >
                                     {option}
                                 </button>
                             </li>
                         ))}
                     </ul>
+
+                </div>
+            ) : timeUp ? (
+                <div>
+                    <span className="section--span accent">Час вийшов!</span>
+                    <p className="section--p">Спробувати ще раз?</p>
+                    <button className="button" onClick={handleRestart}>Рестарт</button>
                 </div>
             ) : (
                 <div>
-                    <h1>Ви зібрали валізу!</h1>
-                    <p>Правільні відповіді: {score}</p>
+                    <span className="section--span accent">Ви зібрали валізу!</span>
+                    <p className="section--p">Правільні відповіді: {score}</p>
+                    <button className="button" onClick={handleRestart}>Рестарт</button>
                 </div>
-            )}
+            )
+            }
         </div>
     );
 };
