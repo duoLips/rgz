@@ -21,7 +21,7 @@ const Quiz = ({activeSlide, time, setTime, setCurrentQuestionIndex, currentQuest
                 clearInterval(timerInterval);
             };
         }
-    }, [time, currentQuestionIndex, questionSet]);
+    }, [time, currentQuestionIndex, questionSet, setTime, setTimeUp]);
     const handleOptionSelect = (option) => {
         const currentQuestion = questionSet[currentQuestionIndex];
         if (option === currentQuestion.correctAnswer) {
@@ -45,6 +45,9 @@ const Quiz = ({activeSlide, time, setTime, setCurrentQuestionIndex, currentQuest
                 break;
             case 2:
                 setTime(45)
+                break;
+            default:
+                setTime(20)
                 break;
         }
     };
